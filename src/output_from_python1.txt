@@ -1,0 +1,24 @@
+Total number of lines
+|a number
+No of nodes
+|node numbers
+No of master nodes
+|master node numbers
+No of friction elements
+|1 friction element 1st slave
+|1 friction element2nd master
+|2 friction element1st salve
+|2 friction element2nd master
+Normal vector for 1st friction element
+|a 
+|b
+|c
+Normal vector for 2nd friction element
+|a 
+|b
+|c
+
+
+
+
+

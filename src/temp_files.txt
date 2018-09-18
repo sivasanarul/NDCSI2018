@@ -1,0 +1,66 @@
+/*
+ * Main.cpp
+ *
+ *  Created on: 19 Jul 2018
+ *      Author: SIV0021
+ */
+
+
+
+
+#include "Main.h"
+
+#include "Friction_element.h"
+#include "Node.h"
+
+int main() {
+	cout << "Hello World!!!" << endl; // prints Hello World!!!
+
+	  double l_x, l_y;             // length of the domain in x and y direction
+	  int div_x, div_y;            // number of elements in x and y direction
+
+	  l_x    = 6;
+	  l_y    = 2;
+	  div_x  = 3;
+	  div_y  = 2;
+
+
+      Node node1(1,2,1,4);
+      Node node2(2,7,1,6);
+
+      std::list<Node*> node_list;                                // empty list of ints
+      node_list.push_back(&node1);
+
+
+
+
+
+
+
+      List<Node*>  node;
+      List<Friction_element*>  friction_element;
+
+
+      node.resize( (div_x+1)*(div_y+1) );
+
+        for (int i=0; i<div_y+1; i++) // looping all horizontal lines
+          for (int j=0; j<div_x+1; j++) // creating nodes on a line in x direction
+            node[ i*(div_x+1) + j ] =
+                new Node( i*(div_x+1) + j , j*(l_x/div_x) , i*(l_y/div_y),0 );
+
+        cout << (div_x+1)*(div_y+1) << " nodes" << endl;
+
+
+        friction_element.resize( 3 );
+
+        friction_element[1] = new Friction_element(1,1,2);
+        friction_element[1]->set_normal_vector(100,100,1200);
+
+        Vector3d disp_vect = friction_element[1]->get_normal_vector();
+              cout << disp_vect << " normalvector" <<  endl;
+
+        cout <<  friction_element[1] << " nodesewgr" << endl;
+        l_x    = 6;
+
+	return 0;
+}
